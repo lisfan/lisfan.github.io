@@ -1,9 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>设备分辨率检测</title>
+</head>
 <body>
-<h1>Hello World
-这真的是一个好东西呀,在线编辑的效果怎么样的呢，我也不知道
-</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<script>
+    setTimeout(() => {
+        const userAgentInfo = navigator.userAgent
+
+        const screenInfo = {
+            screenWidth: screen.width,
+            screenHeight: screen.height,
+            realScreenWidth: screen.width * window.devicePixelRatio,
+            realScreennHeight: screen.height * window.devicePixelRatio,
+            dpr: window.devicePixelRatio,
+        }
+
+        document.write('用户字符串：', JSON.stringify(userAgentInfo, null, 4), '<br/>', '分辨率信息：', JSON.stringify(screenInfo, null, 4))
+    }, 1000)
+
+</script>
 </body>
 </html>
